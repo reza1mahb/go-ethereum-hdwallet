@@ -9,8 +9,8 @@ import (
 	"os"
 	"sync"
 
+	"github.com/btcsuite/btcd/btcutil/hdkeychain"
 	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcutil/hdkeychain"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts"
 	"github.com/ethereum/go-ethereum/common"
@@ -282,7 +282,7 @@ func (w *Wallet) SignTx(account accounts.Account, tx *types.Transaction, chainID
 
 	signer := types.LatestSignerForChainID(chainID)
 
-  // Sign the transaction and verify the sender to avoid hardware fault surprises
+	// Sign the transaction and verify the sender to avoid hardware fault surprises
 	signedTx, err := types.SignTx(tx, signer, privateKey)
 	if err != nil {
 		return nil, err
