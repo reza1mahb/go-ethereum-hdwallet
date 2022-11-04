@@ -3,7 +3,7 @@ all: build
 
 .PHONY: install
 install:
-	@go get -u github.com/tynes/go-ethereum-hdwallet
+	@go get -u github.com/ethereum-optimism/go-ethereum-hdwallet
 
 .PHONY: build
 build:
